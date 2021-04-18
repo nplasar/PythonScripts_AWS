@@ -1,6 +1,6 @@
 import boto3
 
-aws_mgt_con = boto3.session.Session(profile_name = "nplasar")
+aws_mgt_con = boto3.session.Session(profile_name = "NameOfYourProfile")
 ec2_con_re = aws_mgt_con.resource(service_name="ec2", region_name="eu-west-2")
 
 Tags_Spec=[
