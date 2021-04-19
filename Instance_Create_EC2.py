@@ -34,6 +34,12 @@ res_subnet = aws_ec2_con.create_subnet(
                 TagSpecifications = tag_spec_subnet
                 )
 
+res_sg = aws_ec2_con.create_security_group(
+          Description='Allow SSH',
+          GroupName='publicaccess',
+          VpcId = res_vpc.id
+           )
+
 tag_spec_ec2 = [
                     {
                         'ResourceType':'instance',
@@ -51,5 +57,6 @@ res_instance = aws_ec2_con.create_instances(
                 MaxCount=1,
                 MinCount=1,
                 TagSpecifications=tag_spec_ec2,
+                SecurityGroupIds=[res_sg.id],
                 SubnetId=res_subnet.id
                 )
