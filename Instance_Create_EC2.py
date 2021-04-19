@@ -1,5 +1,5 @@
 import boto3
-aws_mag_con = boto3.session.Session(profile_name="nplasar")
+aws_mag_con = boto3.session.Session(profile_name="NAMEOFYOURPROFILE")
 aws_ec2_con = aws_mag_con.resource(service_name='ec2', region_name='eu-west-2')
 
 tag_spec_vpc = [
