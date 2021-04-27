@@ -1,7 +1,7 @@
 import boto3
 
 
-aws_mgt_con = boto3.session.Session (profile_name = "nplasar")
+aws_mgt_con = boto3.session.Session (profile_name = "NAMEOFYOURPROFILE")
 iam_con_client = aws_mgt_con.client (service_name = "iam", region_name = "eu-west-2")
 ec2_con_client = aws_mgt_con.client (service_name = "ec2", region_name = "eu-west-2")
 s3_con_client = aws_mgt_con.client (service_name = "s3", region_name = "eu-west-2")
